@@ -1,0 +1,588 @@
+/********** Template CSS **********/
+:root {
+    /* Define CSS variables for primary, secondary, light, and dark colors */
+    --primary: #86b817;
+    --secondary: #fe8800;
+    --light: #f5f5f5;
+    --dark: #14141f;
+}
+
+/* Font weight utility classes*/
+.fw-medium {
+    font-weight: 600 !important;
+}
+
+.fw-semi-bold {
+    font-weight: 700 !important;
+}
+
+/* Back-to-top button styles */
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+/*** Spinner ***/
+/* Spinner visibility and transition effects */
+
+/*** Button ***/
+/* General button styles */
+.btn {
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+/* Primary and secondary button colors */
+.btn.btn-primary,
+.btn.btn-secondary {
+    color: #ffffff;
+}
+
+/* Square button sizes */
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+/* Square button alignment and padding */
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 0px;
+}
+
+
+
+/* Navbar styles for larger screens */
+@media (min-width: 992px) {
+    .navbar-light {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        border-bottom: 1px solid rgba(256, 256, 256, 0.1);
+        z-index: 999;
+    }
+
+    .sticky-top.navbar-light {
+        position: fixed;
+        background: #ffffff;
+    }
+
+    .navbar-light .navbar-nav .nav-link::before {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 2px;
+        bottom: -1px;
+        left: 50%;
+        background: var(--primary);
+        transition: 0.5s;
+    }
+
+    .navbar-light .navbar-nav .nav-link:hover::before,
+    .navbar-light .navbar-nav .nav-link.active::before {
+        width: calc(100% - 2px);
+        left: 1px;
+    }
+
+    .navbar-light .navbar-nav .nav-link.nav-contact::before {
+        display: none;
+    }
+}
+
+/*** Hero Header ***/
+/* Hero header background styles */
+.hero-header {
+    background: linear-gradient(rgba(20, 20, 31, 0.7), rgba(20, 20, 31, 0.7)), url(../img/bg-hero.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Breadcrumb separator styles */
+.breadcrumb-item + .breadcrumb-item::before {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/*** Section Title ***/
+/* Section title styles */
+.section-title {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+/* Section title underline styles */
+.section-title::before {
+    position: absolute;
+    content: "";
+    width: calc(100% + 80px);
+    height: 2px;
+    top: 4px;
+    left: -40px;
+    background: var(--primary);
+    z-index: -1;
+}
+
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: calc(100% + 120px);
+    height: 2px;
+    bottom: 5px;
+    left: -60px;
+    background: var(--primary);
+    z-index: -1;
+}
+
+/* Section title alignment for text-start */
+.section-title.text-start::before {
+    width: calc(100% + 40px);
+    left: 0;
+}
+
+.section-title.text-start::after {
+    width: calc(100% + 60px);
+    left: 0;
+}
+
+/*** Service ***/
+/* Service item styles */
+.service-item {
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+    transition: 0.5s;
+}
+
+.service-item:hover {
+    background: var(--primary);
+}
+
+/* Service item child elements transition */
+.service-item * {
+    transition: 0.5s;
+}
+
+.service-item:hover * {
+    color: var(--light) !important;
+}
+
+/*** Destination ***/
+/* Destination image hover effect */
+.destination img {
+    transition: 0.5s;
+}
+
+.destination a:hover img {
+    transform: scale(1.1);
+}
+
+/*** Package ***/
+/* Package item styles */
+.package-item {
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+}
+
+.package-item img {
+    transition: 0.5s;
+}
+
+.package-item:hover img {
+    transform: scale(1.1);
+}
+
+/*** Booking ***/
+/* Booking section background styles */
+.booking {
+    background: linear-gradient(rgba(15, 23, 43, 0.7), rgba(15, 23, 43, 0.7)), url(../img/booking.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*** Team ***/
+/* Team item styles */
+.team-item {
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+}
+
+.team-item img {
+    transition: 0.5s;
+}
+
+.team-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Team item button styles */
+.team-item .btn {
+    background: #ffffff;
+    color: var(--primary);
+    border-radius: 20px;
+    border-bottom: 1px solid var(--primary);
+}
+
+.team-item .btn:hover {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+/*** Testimonial ***/
+/* Testimonial carousel gradient overlays */
+.testimonial-carousel::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 1;
+}
+
+.testimonial-carousel::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 1;
+}
+
+/* Testimonial carousel responsive gradient widths */
+@media (min-width: 768px) {
+    .testimonial-carousel::before,
+    .testimonial-carousel::after {
+        width: 200px;
+    }
+}
+
+@media (min-width: 992px) {
+    .testimonial-carousel::before,
+    .testimonial-carousel::after {
+        width: 300px;
+    }
+}
+
+/* Testimonial carousel item hover and active states */
+.testimonial-carousel .owl-item .testimonial-item,
+.testimonial-carousel .owl-item.center .testimonial-item * {
+    transition: 0.5s;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-item {
+    background: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-item * {
+    color: #ffffff !important;
+}
+
+/* Testimonial carousel dots styles */
+.testimonial-carousel .owl-dots {
+    margin-top: 24px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.testimonial-carousel .owl-dot {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 15px;
+    transition: 0.5s;
+}
+
+.testimonial-carousel .owl-dot.active {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+/*** Footer ***/
+/* Footer social button styles */
+.footer .btn.btn-social {
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light);
+    font-weight: normal;
+    border: 1px solid #ffffff;
+    border-radius: 35px;
+    transition: 0.3s;
+}
+
+.footer .btn.btn-social:hover {
+    color: var(--primary);
+}
+
+/* Footer link button styles */
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: 0.3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+/* Footer copyright styles */
+.footer .copyright {
+    padding: 25px 0;
+    font-size: 15px;
+    border-top: 1px solid rgba(256, 256, 256, 0.1);
+}
+
+.footer .copyright a {
+    color: var(--light);
+}
+
+/* Footer menu link styles */
+.footer .footer-menu a {
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer .footer-menu a:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+}
+
+/* Hero section styles */
+.hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/algeria-hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 15px;
+    color: white;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+/* Search box styles */
+.search-box {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    max-width: 1000px;
+    width: 100%;
+}
+
+/* Gradient green button styles */
+.btn-gradient-green {
+    background: linear-gradient(to right, #86b817, #6ca013);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-gradient-green:hover {
+    background: linear-gradient(to right, #6ca013, #86b817);
+    transform: scale(1.03);
+}
+
+/* Pagination styles */
+.pagination {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+    justify-content: center;
+    padding-left: 0;
+}
+
+.page-item {
+    transition: all 0.3s ease;
+}
+
+.page-link {
+    border: none;
+    padding: 10px 16px;
+    color: #0d6efd;
+    background-color: #f1f1f1;
+    border-radius: 30px;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.page-link:hover {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.page-item.active .page-link {
+    background: linear-gradient(to right, #0d6efd, #1e90ff);
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom hero section styles */
+.custom-hero {
+    position: relative;
+    background-image: url("/assets/img/our services.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+}
+
+/* Overlay for custom hero section */
+.overlay-green {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, rgba(44, 116, 199, 0.3), rgba(0, 0, 0, 0.4));
+    z-index: 0;
+}
+
+/* Hero header breadcrumb link styles */
+.hero-header .breadcrumb-item a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Smooth entrance animation */
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -40px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.fadeInDown {
+    animation-name: fadeInDown;
+}
+
+/* Contact page custom hero section */
+.custom-hero {
+    background-image: url('/assets/img/contact-us.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    position: relative;
+}
+
+/* Overlay for contact page hero section */
+.custom-hero .overlay {
+    background: linear-gradient(to bottom, rgba(0, 51, 128, 0.4), rgba(0, 0, 0, 0.7));
+}
+
+/* Content styles for contact page hero section */
+.custom-hero .content {
+    z-index: 2;
+}
+
+/* Slogan styles */
+.slogan {
+    font-size: 1.25rem;
+    font-style: italic;
+    opacity: 0.9;
+    margin-top: 1rem;
+}
+
+.category-item:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  .review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+/*Tours Search Box*/
+.search-box {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid #dee2e6;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.search-box .form-control,
+.search-box .form-select {
+  border: none;
+  background: #fff;
+  font-size: 0.9rem;
+  padding: 0.6rem 1rem;
+}
+
+.search-box .form-control:focus,
+.search-box .form-select:focus {
+  box-shadow: 0 0 0 0.25rem rgba(134, 184, 23, 0.25);
+  border-color: #86b817;
+}
+
+.search-box .btn {
+  transition: all 0.2s ease-in-out;
+}
+
+.search-box .btn:hover {
+  background-color: #549af5;
+  color: #fff;
+  border-color: #549af5;
+}
+
+
+
+
+
+

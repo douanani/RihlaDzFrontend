@@ -1,0 +1,14 @@
+.profile-settings-page {
+  background-color: #e9edf5;
+}
+
+.nav-tabs .nav-link.active {
+  border-bottom: 2px solid #028de9 !important;
+  color: #028de9 !important;
+  font-weight: 600;
+}
+
+.nav-tabs .nav-link {
+  color: #6c757d;
+  font-weight: 500;
+}
