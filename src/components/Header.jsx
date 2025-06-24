@@ -136,6 +136,7 @@ function Header({ mode, toggleColorMode }) {
             mr: { xs: 2, sm: 5 },
           }}
         >
+          // Replace the current logo section with this:
           <Link
             to="/"
             style={{
@@ -146,7 +147,11 @@ function Header({ mode, toggleColorMode }) {
             }}
           >
             <img
-              src="/assets/img/logo.png"
+              src={
+                mode === "dark"
+                  ? "/assets/img/logo-dark.png"
+                  : "/assets/img/logo-light.png"
+              }
               alt="RihlaDz Logo"
               style={{
                 height: "100%",
@@ -194,9 +199,9 @@ function Header({ mode, toggleColorMode }) {
           {/* Dark/Light mode toggle */}
           <IconButton
             onClick={toggleColorMode}
-            sx={{ 
+            sx={{
               mr: 1,
-              color: mode === "dark" ? "common.white" : "common.black"
+              color: mode === "dark" ? "common.white" : "common.black",
             }}
             aria-label={`Switch to ${mode === "dark" ? "light" : "dark"} mode`}
           >
@@ -207,9 +212,9 @@ function Header({ mode, toggleColorMode }) {
           {isMobile && (
             <IconButton
               onClick={toggleMobileMenu}
-              sx={{ 
+              sx={{
                 mr: 1,
-                color: mode === "dark" ? "common.white" : "common.black"
+                color: mode === "dark" ? "common.white" : "common.black",
               }}
               aria-label="Open menu"
             >
@@ -222,9 +227,9 @@ function Header({ mode, toggleColorMode }) {
             <>
               <IconButton
                 onClick={handleNotificationClick}
-                sx={{ 
+                sx={{
                   mr: 1,
-                  color: mode === "dark" ? "common.white" : "common.black"
+                  color: mode === "dark" ? "common.white" : "common.black",
                 }}
                 aria-label="Notifications"
               >
